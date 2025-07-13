@@ -43,30 +43,35 @@ export default function FinalResult({
         <p>■ 手数料税 : ${(data.feeTaxJPY / exchangeRateUSDtoJPY).toFixed(2)} / ￥{data.feeTaxJPY.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
         <p>■ Payoneer手数料 : ${(data.payoneerFeeJPY / exchangeRateUSDtoJPY).toFixed(2)} / ￥{data.payoneerFeeJPY.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
         <p>■ 為替手数料: ${(data.exchangeFeeJPY / exchangeRateUSDtoJPY).toFixed(2)}  / ￥{data.exchangeFeeJPY.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
-        <div className="p-4 space-y-4">
-          <h2 className="text-lg font-bold mb-4">【利益サマリー】</h2>
+        <div className="p-6 bg-white rounded-lg shadow space-y-6">
+          <h2 className="text-xl font-bold border-b pb-2">【損益結果】</h2>
 
-          <div className="flex justify-between items-end">
-            <span className="font-medium">■ 粗利 (売上 - 仕入 - 送料)</span>
-            <span className="text-right">
-              <span className="mr-2 text-gray-600 text-xl font-semibold">${(data.netProfitJPY / exchangeRateUSDtoJPY).toFixed(2)}</span>
-              <span className="text-2xl font-bold text-gray-800">￥{data.netProfitJPY.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
-            </span>
+          <div className="flex justify-between items-center">
+            <span className="text-gray-700 font-medium">利益 (売上 - 仕入 - 送料)</span>
+            <div className="text-right">
+              <span className="block text-gray-500 text-sm">USD</span>
+              <span className="text-lg font-semibold text-gray-700">${(data.netProfitJPY / exchangeRateUSDtoJPY).toFixed(2)}</span>
+              <span className="block text-sm mt-1 text-gray-500">JPY</span>
+              <span className="text-2xl font-bold text-gray-900">￥{data.netProfitJPY.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+            </div>
           </div>
 
-          <div className="flex justify-between items-end">
-            <span className="font-medium">■ 最終損益（還付金付与後）</span>
-            <span className="text-right">
-              <span className="mr-2 text-gray-600 text-xl font-semibold">${(data.profitJPY / exchangeRateUSDtoJPY).toFixed(2)}</span>
-              <span className="text-2xl font-bold text-gray-800">￥{data.profitJPY.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
-            </span>
+          <div className="flex justify-between items-center border-t pt-4">
+            <span className="text-gray-700 font-medium">最終損益（還付金付与後）</span>
+            <div className="text-right">
+              <span className="block text-gray-500 text-sm">USD</span>
+              <span className="text-lg font-semibold text-gray-700">${(data.profitJPY / exchangeRateUSDtoJPY).toFixed(2)}</span>
+              <span className="block text-sm mt-1 text-gray-500">JPY</span>
+              <span className="text-2xl font-bold text-gray-900">￥{data.profitJPY.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+            </div>
           </div>
 
-          <div className="flex justify-between items-end">
-            <span className="font-medium">■ 利益率</span>
-            <span className="text-2xl font-bold">{data.profitMargin.toFixed(2)}%</span>
+          <div className="flex justify-between items-center border-t pt-4">
+            <span className="text-gray-700 font-medium">利益率</span>
+            <span className="text-2xl font-bold text-green-600">{data.profitMargin.toFixed(2)}%</span>
           </div>
         </div>
+
 
         <div className="border-t border-gray-300 my-2" />
 
