@@ -47,7 +47,7 @@ export default function FinalResult({
           <h2 className="text-lg font-bold mb-4">【利益サマリー】</h2>
 
           <div className="flex justify-between items-end">
-            <span className="font-medium">■ 粗利 (売上 - 仕入 - 配送)</span>
+            <span className="font-medium">■ 粗利 (売上 - 仕入 - 送料)</span>
             <span className="text-right">
               <span className="mr-2 text-gray-600 text-xl font-semibold">${(data.netProfitJPY / exchangeRateUSDtoJPY).toFixed(2)}</span>
               <span className="text-2xl font-bold text-gray-800">￥{data.netProfitJPY.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
